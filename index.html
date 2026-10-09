@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ty Grimes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,400&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="shell nav-row">
+    <nav class="tabs">
+      <a class="name" href="#ty" data-target="ty">Ty</a>
+      <a href="#projects" data-target="projects">Projects</a>
+      <a href="#hobbies" data-target="hobbies">Hobbies</a>
+      <a href="#photos" data-target="photos">Photos</a>
+      <a href="#about" data-target="about">About</a>
+    </nav>
+    <div class="social-row">
+      <a href="https://github.com/wasiangrime" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://instagram.com/wasiangrime" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:ty.c.grimes@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="painted-edge" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <section class="view shell intro-grid" id="view-ty" data-view="ty">
+
+    <div class="intro-top">
+      <div class="flow">
+        <p>
+          Hi, I'm <strong>Ty</strong>, an
+          <a href="https://luddy.indiana.edu" target="_blank" rel="noopener">Informatics student</a>
+          at <a href="https://www.indiana.edu" target="_blank" rel="noopener">Indiana University</a>'s
+          Luddy School of Informatics, Computing, and Engineering.
+        </p>
+        <p>
+          This site is still taking shape, but it's where I'll keep track of what
+          I'm building and learning along the way. Outside of class and code,
+          you'll usually find me rock climbing, working on my latest Gunpla
+          build, or out taking photos.
+        </p>
+        <p>
+          In the meantime, you can find some of my code on
+          <a href="https://github.com/wasiangrime" target="_blank" rel="noopener">GitHub</a>,
+          more of what I'm up to on <a href="https://instagram.com/wasiangrime" target="_blank" rel="noopener">Instagram</a>,
+          or just <a href="mailto:ty.c.grimes@gmail.com">email me</a> directly.
+          I'm always happy to connect.
+        </p>
+        <p>
+          For the longer version of my story, there's more on the
+          <a href="#about" data-target="about">About page</a>.
+        </p>
+      </div>
+
+      <div class="intro-side">
+        <div class="card">
+          <div class="now-header">
+            <p class="label">Now</p>
+            <button type="button" class="now-edit" id="nowEditBtn" hidden aria-label="Change what I'm doing">✎</button>
+          </div>
+          <p class="card-text now-status" id="nowStatus" data-status-id="studying">📚 Studying Informatics at IU's Luddy School.</p>
+        </div>
+
+        <a class="card card-fill card-link" href="https://rhystic-zone.vercel.app/" target="_blank" rel="noopener">
+          <div class="laptop-wrap">
+            <div class="laptop-mock">
+              <div class="laptop-screen">
+                <img src="rhystic-screenshot.jpg" alt="Rhystic Zone deck builder in night mode, showing a full 100-card Aegar, the Freezing Flame deck with mana curve and color distribution">
+                <span class="laptop-notch" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="label">Projects · Rhystic Zone</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <aside class="rail">
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--a photo-fill--sq"></div>
+      </div>
+
+      <div class="card card-blank"></div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--b photo-fill--sq"></div>
+      </div>
+
+      <div class="card card-blank"></div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--c photo-fill--sq"></div>
+      </div>
+
+      <div class="card card-blank"></div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--a photo-fill--sq"></div>
+      </div>
+    </aside>
+
+  </section>
+
+  <section class="view shell" id="view-projects" data-view="projects" hidden>
+
+    <div class="page-head">
+      <h1>Projects</h1>
+      <p class="placeholder">A few projects I've been working on, with more coming in the future.</p>
+    </div>
+
+    <div class="grid-2">
+      <a class="card card-fill card-link" href="https://rhystic-zone.vercel.app/" target="_blank" rel="noopener">
+        <div class="laptop-wrap">
+          <div class="laptop-mock">
+            <div class="laptop-screen">
+              <img src="rhystic-screenshot.jpg" alt="Rhystic Zone deck builder in night mode, showing a full 100-card Aegar, the Freezing Flame deck with mana curve and color distribution">
+              <span class="laptop-notch" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="label">Rhystic Zone</p>
+          <p class="card-text">A Magic: The Gathering Commander hub and deck
+            builder with live-ranked commanders, a deck builder backed by real
+            Scryfall data, playstyle-grouped recommendations, and infinite
+            combo detection via Commander Spellbook. React + Vite, no backend.</p>
+          <p class="card-text"><span class="pill-link">rhystic-zone.vercel.app ↗</span></p>
+        </div>
+      </a>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--b"></div>
+      </div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--c"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="view shell" id="view-hobbies" data-view="hobbies" hidden>
+
+    <div class="page-head">
+      <h1>Hobbies</h1>
+      <p class="placeholder">What I get up to outside of class and code.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-fill">
+        <div class="photo-real photo-real--square">
+          <img src="gundam-strike-freedom.jpg" alt="A partially-built HG 1/144 Strike Freedom Gundam model kit on a desk, wings spread, next to its instruction manual">
+          <span class="photo-badge">HG 1/144 Strike Freedom</span>
+        </div>
+        <div class="card-body">
+          <p class="label">Hobbies · Gunpla</p>
+          <p class="card-text">Mid-build: wings and effect parts on, still working through the rest.</p>
+        </div>
+      </div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--b"></div>
+      </div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--c"></div>
+      </div>
+
+      <div class="card card-fill">
+        <div class="photo-fill photo-fill--a"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="view shell" id="view-about" data-view="about" hidden>
+
+    <div class="about-head">
+      <img class="about-photo" src="ty-profile.jpg" alt="Ty Grimes smiling outdoors on the IU Bloomington campus, wearing a black suit and tie">
+      <div>
+        <h1>About me</h1>
+        <p class="role">Second-Year Informatics Student, IU Bloomington</p>
+      </div>
+    </div>
+
+    <div class="bio">
+      <p>
+        Ty is a second-year Informatics student at Indiana University
+        Bloomington's Luddy School of Informatics, Computing, and
+        Engineering, minoring in Marketing and Human-Computer Interaction
+        and Design.
+      </p>
+      <p>
+        As an Asian American student working toward a career in UI/UX
+        design, he's drawn to the details that make software feel
+        intuitive: how people move through an interface, and what makes
+        an experience click. Marketing and HCI/d round out that lens, from
+        understanding an audience to designing for how people actually
+        behave.
+      </p>
+    </div>
+
+    <section class="block">
+      <h2>Interests</h2>
+      <div class="tags">
+        <span class="tag">Informatics</span>
+        <span class="tag">UI/UX Design</span>
+        <span class="tag">Marketing</span>
+        <span class="tag">HCI/d</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Skills</h2>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">HTML/CSS</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:ty.c.grimes@gmail.com">ty.c.grimes@gmail.com</a>
+        </li>
+        <li>
+          <span class="label">GitHub</span>
+          <a href="https://github.com/wasiangrime" target="_blank" rel="noopener">github.com/wasiangrime</a>
+        </li>
+        <li>
+          <span class="label">Instagram</span>
+          <a href="https://instagram.com/wasiangrime" target="_blank" rel="noopener">@wasiangrime</a>
+        </li>
+      </ul>
+    </section>
+
+  </section>
+
+  <section class="view shell" id="view-photos" data-view="photos" hidden>
+
+    <div class="page-head">
+      <h1>Photos</h1>
+      <p class="placeholder">A few snapshots.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo-fill photo-fill--a"></div>
+      <div class="photo-fill photo-fill--b"></div>
+      <div class="photo-fill photo-fill--c"></div>
+      <div class="photo-fill photo-fill--b"></div>
+      <div class="photo-fill photo-fill--c"></div>
+      <div class="photo-fill photo-fill--a"></div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="painted-edge painted-edge--top" aria-hidden="true"></div>
+  <div class="shell">
+    <span>&copy; 2026 Ty Grimes</span>
+    <span>Built with care.</span>
+  </div>
+</footer>
+
+<script src="drop-in.js" defer></script>
+<script src="nav.js" defer></script>
+<script src="now-status.js" defer></script>
+</body>
+</html>
