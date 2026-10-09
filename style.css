@@ -254,16 +254,13 @@ footer.site .shell {
 
 .intro-top {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 2fr;
-  gap: clamp(24px, 3vw, 56px);
-  align-items: start;
+  grid-template-columns: minmax(320px, 1fr) 1.5fr;
+  gap: clamp(24px, 4vw, 72px);
+  align-items: center;
 }
 
 .intro-side {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 14px;
-  align-items: start;
+  display: block;
 }
 
 @media (max-width: 1000px) {
@@ -276,10 +273,10 @@ footer.site .shell {
 
 .flow {
   font-family: "Fraunces", Georgia, serif;
-  font-size: 1.3rem;
-  line-height: 1.65;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  line-height: 1.6;
   color: var(--muted);
-  max-width: 68ch;
+  max-width: 34em;
 }
 
 .flow p { margin: 0 0 24px; }
