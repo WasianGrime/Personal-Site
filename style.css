@@ -736,13 +736,49 @@ a.book-card-link:hover .arrow { color: var(--accent); }
   justify-content: center;
 }
 
-.about-head .about-photo {
-  flex-shrink: 0;
-  width: 84px;
-  height: 84px;
-  border-radius: 4px;
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) 1.6fr;
+  gap: clamp(24px, 4vw, 72px);
+  align-items: start;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: top;
+  border-radius: 10px;
+  position: sticky;
+  top: 110px;
+}
+
+.about-body .bio {
+  margin-top: 28px;
+  max-width: 68ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.about-cards section.block { margin-top: 0; }
+.about-cards .about-contact { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-photo { position: static; max-width: 360px; }
+}
+
+@media (max-width: 640px) {
+  .about-cards { grid-template-columns: 1fr; }
 }
 
 .about-head h1 {
