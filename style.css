@@ -601,6 +601,19 @@ a.card-link:hover .laptop-screen {
   aspect-ratio: 1 / 1;
 }
 
+.gallery .photo-real--tall {
+  grid-row: span 2;
+  aspect-ratio: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery .photo-real--tall img {
+  position: absolute;
+  inset: 0;
+  object-position: 45% center;
+}
+
 @media (max-width: 640px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
