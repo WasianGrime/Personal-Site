@@ -758,7 +758,7 @@ a.book-card-link:hover .arrow { color: var(--accent); }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: top;
+  object-position: 50% 60%;
   border-radius: 10px;
   position: sticky;
   top: 110px;
