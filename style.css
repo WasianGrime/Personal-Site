@@ -292,7 +292,11 @@ footer.site .shell {
 }
 
 a.card-link {
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease, background-color 0.2s ease;
+}
+
+a.card-link .laptop-wrap {
+  transition: background-color 0.2s ease;
 }
 
 .card-blank { aspect-ratio: 1 / 1; }
@@ -344,6 +348,11 @@ a.card-link {
 
 a.card-link:hover {
   transform: translateY(-1px);
+  background-color: #ebe9e1;
+}
+
+a.card-link:hover .laptop-wrap {
+  background-color: #ebe9e1;
 }
 
 .card-top {
