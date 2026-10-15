@@ -885,7 +885,7 @@ a.deck-tile {
 
 .deck-box {
   position: absolute;
-  left: 36%;
+  left: 38%;
   bottom: 10%;
   width: 48%;
   height: 66%;
@@ -914,12 +914,12 @@ a.deck-tile {
 .deck-fan {
   position: absolute;
   left: 8.5%;
-  bottom: 6%;
+  bottom: 5%;
   width: 83%;
   height: auto;
   border-radius: 4.5% / 3.2%;
   transform-origin: 50% 100%;
-  transform: translateY(26%);
+  transform: translateY(0);
   box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.28);
 }
 
@@ -928,7 +928,7 @@ a.deck-tile {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 72%;
+  height: 92%;
   z-index: 3;
   display: flex;
   align-items: center;
@@ -942,7 +942,7 @@ a.deck-tile {
 
 .deck-box-label {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 3cqw;
+  font-size: 2.6cqw;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #e9d9a8;
@@ -953,7 +953,7 @@ a.deck-tile {
 
 .deck-cmdr {
   position: absolute;
-  left: 6%;
+  left: 10%;
   bottom: 10%;
   width: 42%;
   height: auto;
@@ -968,7 +968,7 @@ a.deck-tile {
 .deck-tile:focus-visible .deck-box { transform: translateX(8%); }
 
 .deck-tile:hover .deck-cmdr,
-.deck-tile:focus-visible .deck-cmdr { transform: translateX(-9%) rotate(-8deg); }
+.deck-tile:focus-visible .deck-cmdr { transform: translateX(-3%) rotate(-7deg); }
 
 .deck-tile:hover .deck-fan--1,
 .deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -30%) rotate(-9deg); }
