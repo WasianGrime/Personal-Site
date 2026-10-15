@@ -908,9 +908,9 @@ a.deck-tile::after {
 
 .deck-box {
   position: absolute;
-  left: 40%;
+  left: 32%;
   bottom: 15%;
-  width: 58%;
+  width: 64%;
   aspect-ratio: 300 / 240;
   z-index: 1;
 }
@@ -996,19 +996,19 @@ a.deck-tile::after {
 .deck-tile:focus-visible::before { opacity: 1; }
 
 .deck-tile:hover .deck-box,
-.deck-tile:focus-visible .deck-box { transform: translateX(3%); }
+.deck-tile:focus-visible .deck-box { transform: translateX(2.5%); }
 
 .deck-tile:hover .deck-cmdr,
 .deck-tile:focus-visible .deck-cmdr { transform: translateX(-2%) rotate(-5deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translate(-16%, -62%) rotate(-10deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-18%, -70%) rotate(-10deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -76%) rotate(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -86%) rotate(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translate(16%, -62%) rotate(10deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(18%, -70%) rotate(10deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-box,
