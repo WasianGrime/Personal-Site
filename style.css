@@ -594,10 +594,6 @@ a.card-link:hover .laptop-screen {
   gap: 18px;
 }
 
-@media (min-width: 1300px) {
-  .book-grid { grid-template-columns: repeat(4, 1fr); }
-}
-
 @media (max-width: 860px) {
   .book-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -619,11 +615,11 @@ a.book-card-link {
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 a.book-card-link:hover {
-  background-color: #ebe9e1;
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 

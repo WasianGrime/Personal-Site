@@ -7,8 +7,7 @@
     projects: "Projects | Ty Grimes",
     hobbies: "Hobbies | Ty Grimes",
     about: "About | Ty Grimes",
-    photos: "Photos | Ty Grimes",
-    movies: "Movies | Ty Grimes"
+    photos: "Photos | Ty Grimes"
   };
 
   var indicator = document.createElement("span");
