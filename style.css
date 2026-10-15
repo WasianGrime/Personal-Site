@@ -1181,13 +1181,13 @@ a.deck-tile::after {
 .deck-tile:focus-visible .dflap-top { transform: rotateX(192deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translateZ(6cqw) translate(-7%, -26%) rotateZ(-8deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translateZ(6cqw) translate(-9%, -38%) rotateZ(-9deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translateZ(0) translate(0, -36%) rotateZ(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translateZ(0) translate(0, -48%) rotateZ(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translateZ(-6cqw) translate(7%, -26%) rotateZ(8deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translateZ(-6cqw) translate(9%, -38%) rotateZ(9deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-cmdr,
