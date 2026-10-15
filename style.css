@@ -920,8 +920,25 @@ a.deck-tile::after {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  overflow: visible;
+}
+
+.deck-boxart--back { z-index: 1; }
+
+.deck-boxart--front {
+  z-index: 3;
   filter: drop-shadow(0 1.4cqw 1.8cqw rgba(30, 24, 18, 0.35));
+}
+
+.deck-lid-closed,
+.deck-lid-open {
+  transform-box: view-box;
+  transform-origin: 86px 22px;
+}
+
+.deck-lid-open {
+  opacity: 0;
+  transform: scale(1, 0.04);
 }
 
 .deck-fan {
@@ -931,7 +948,7 @@ a.deck-tile::after {
   width: 37.9%;
   max-width: none;
   height: auto;
-  z-index: 1;
+  z-index: 2;
   border-radius: 4.5% / 3.2%;
   transform-origin: 50% 100%;
   box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.28);
@@ -998,25 +1015,37 @@ a.deck-tile::after {
 .deck-tile:hover .deck-box,
 .deck-tile:focus-visible .deck-box { transform: translateX(2.5%); }
 
+.deck-tile:hover .deck-lid-closed,
+.deck-tile:focus-visible .deck-lid-closed { transform: scale(1, 0.04); opacity: 0; }
+
+.deck-tile:hover .deck-lid-open,
+.deck-tile:focus-visible .deck-lid-open { transform: scale(1, 1); opacity: 1; }
+
 .deck-tile:hover .deck-cmdr,
 .deck-tile:focus-visible .deck-cmdr { transform: translateX(-2%) rotate(-5deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translate(-18%, -70%) rotate(-10deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-15%, -34%) rotate(-8deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -86%) rotate(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -44%) rotate(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translate(18%, -70%) rotate(10deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(15%, -34%) rotate(8deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-box,
   .deck-cmdr,
   .deck-fan { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 
-  .deck-fan--2 { transition-delay: 0.08s; }
-  .deck-fan--3 { transition-delay: 0.14s; }
+  .deck-lid-closed { transition: transform 0.5s cubic-bezier(0.5, 0, 0.75, 0), opacity 0.3s ease 0.2s; }
+  .deck-lid-open { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s, opacity 0.2s ease 0.15s; }
+
+  .deck-fan { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s; }
+  .deck-fan--2 { transition-delay: 0.48s; }
+  .deck-fan--3 { transition-delay: 0.56s; }
+
+  .deck-tile:not(:hover) .deck-fan { transition-delay: 0s; }
 
   a.deck-tile::before { transition: opacity 0.4s ease; }
 
