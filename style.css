@@ -871,3 +871,119 @@ section.block h2 {
     transform: translateY(0) rotate(0deg);
   }
 }
+
+/* ---- deck box tile: commander card in front, deck box slides open on hover ---- */
+a.deck-tile {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  container-type: inline-size;
+}
+
+.deck-tile img { display: block; }
+
+.deck-box {
+  position: absolute;
+  left: 36%;
+  bottom: 10%;
+  width: 48%;
+  height: 66%;
+  z-index: 1;
+}
+
+.deck-box-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 2.4cqw;
+  background: linear-gradient(165deg, #434961, #262a39);
+  box-shadow: 0 1.2cqw 3cqw rgba(20, 22, 35, 0.25);
+}
+
+.deck-box-back::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 12%;
+  border-radius: 2.4cqw 2.4cqw 0 0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.deck-fan {
+  position: absolute;
+  left: 8.5%;
+  bottom: 6%;
+  width: 83%;
+  height: auto;
+  border-radius: 4.5% / 3.2%;
+  transform-origin: 50% 100%;
+  transform: translateY(26%);
+  box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.28);
+}
+
+.deck-box-front {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8cqw 0.8cqw 2.4cqw 2.4cqw;
+  background: linear-gradient(165deg, #565d78, #2f3446);
+  box-shadow:
+    inset 0 0.35cqw 0 rgba(255, 255, 255, 0.2),
+    inset 0 -0.6cqw 0 rgba(0, 0, 0, 0.25);
+}
+
+.deck-box-label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 3cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e9d9a8;
+  padding: 1.2cqw 2.4cqw;
+  border: 0.3cqw solid rgba(233, 217, 168, 0.55);
+  border-radius: 0.8cqw;
+}
+
+.deck-cmdr {
+  position: absolute;
+  left: 6%;
+  bottom: 10%;
+  width: 42%;
+  height: auto;
+  z-index: 4;
+  border-radius: 4.5% / 3.2%;
+  transform-origin: 50% 100%;
+  transform: rotate(-5deg);
+  box-shadow: 0 1.2cqw 3cqw rgba(0, 0, 0, 0.35);
+}
+
+.deck-tile:hover .deck-box,
+.deck-tile:focus-visible .deck-box { transform: translateX(8%); }
+
+.deck-tile:hover .deck-cmdr,
+.deck-tile:focus-visible .deck-cmdr { transform: translateX(-9%) rotate(-8deg); }
+
+.deck-tile:hover .deck-fan--1,
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -30%) rotate(-9deg); }
+
+.deck-tile:hover .deck-fan--2,
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -40%) rotate(-1deg); }
+
+.deck-tile:hover .deck-fan--3,
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(8%, -30%) rotate(9deg); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .deck-box,
+  .deck-cmdr,
+  .deck-fan { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .deck-fan--2 { transition-delay: 0.05s; }
+  .deck-fan--3 { transition-delay: 0.1s; }
+}
