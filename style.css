@@ -909,9 +909,9 @@ a.deck-tile::after {
 .deck-box {
   --navy: #2c3b68;
   position: absolute;
-  left: 37%;
+  left: 43%;
   bottom: 15%;
-  width: 56%;
+  width: 52%;
   height: 64%;
   z-index: 1;
 }
@@ -927,9 +927,9 @@ a.deck-tile::after {
 
 .deck-fan {
   position: absolute;
-  left: 18%;
+  left: 13%;
   bottom: 5%;
-  width: 68%;
+  width: 74%;
   max-width: none;
   height: auto;
   border-radius: 4.5% / 3.2%;
@@ -1046,9 +1046,9 @@ a.deck-tile::after {
 
 .deck-cmdr {
   position: absolute;
-  left: 8.5%;
+  left: 7%;
   bottom: 15%;
-  width: 40%;
+  width: 38%;
   height: auto;
   z-index: 5;
   border-radius: 4.5% / 3.2%;
@@ -1103,19 +1103,19 @@ a.deck-tile::after {
 .deck-tile:focus-visible::before { opacity: 1; }
 
 .deck-tile:hover .deck-box,
-.deck-tile:focus-visible .deck-box { transform: translateX(4%); }
+.deck-tile:focus-visible .deck-box { transform: translateX(3%); }
 
 .deck-tile:hover .deck-cmdr,
 .deck-tile:focus-visible .deck-cmdr { transform: translateX(-3%) rotate(-7deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -26%) rotate(-9deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -30%) rotate(-9deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -36%) rotate(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -38%) rotate(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translate(7%, -26%) rotate(9deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(7%, -30%) rotate(9deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-box,
