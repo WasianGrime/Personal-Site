@@ -872,7 +872,7 @@ section.block h2 {
   }
 }
 
-/* ---- deck box tile: detailed parchment deck box behind a commander card; slides open on hover ---- */
+/* ---- deck box tile: black sideloader deck box behind a large commander card; cards slide up on hover ---- */
 a.deck-tile {
   position: relative;
   padding: 0;
@@ -897,165 +897,57 @@ a.deck-tile::before {
 a.deck-tile::after {
   content: "";
   position: absolute;
-  left: 6%;
-  bottom: 12%;
+  left: 8%;
+  bottom: 11%;
   width: 88%;
   height: 5%;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(40, 30, 20, 0.28), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(40, 30, 20, 0.3), transparent 70%);
 }
 
 .deck-box {
-  --navy: #2c3b68;
   position: absolute;
-  left: 43%;
+  left: 40%;
   bottom: 15%;
-  width: 52%;
-  height: 64%;
+  width: 58%;
+  aspect-ratio: 300 / 240;
   z-index: 1;
 }
 
-.deck-box-back {
+.deck-boxart {
   position: absolute;
   inset: 0;
-  border-radius: 2cqw 2cqw 1cqw 1cqw;
-  border-top: 0.8cqw solid var(--navy);
-  background: linear-gradient(#8f7b58, #b7a27b 18%, #cdbb98);
-  box-shadow: 0 1.2cqw 3cqw rgba(50, 38, 20, 0.28);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  filter: drop-shadow(0 1.4cqw 1.8cqw rgba(30, 24, 18, 0.35));
 }
 
 .deck-fan {
   position: absolute;
-  left: 13%;
-  bottom: 5%;
-  width: 74%;
+  left: 31%;
+  bottom: 14.7%;
+  width: 37.9%;
   max-width: none;
   height: auto;
+  z-index: 1;
   border-radius: 4.5% / 3.2%;
   transform-origin: 50% 100%;
   box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.28);
 }
 
-.deck-box-side,
-.deck-box-front,
-.deck-box-flap {
-  position: absolute;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-color: #eadcbc;
-  background-image:
-    radial-gradient(40% 30% at 78% 70%, rgba(150, 110, 60, 0.10), transparent 70%),
-    radial-gradient(35% 25% at 20% 30%, rgba(150, 110, 60, 0.08), transparent 70%),
-    repeating-linear-gradient(45deg, rgba(120, 100, 70, 0.08) 0 0.35cqw, transparent 0.35cqw 0.7cqw),
-    repeating-linear-gradient(-45deg, rgba(120, 100, 70, 0.08) 0 0.35cqw, transparent 0.35cqw 0.7cqw),
-    linear-gradient(160deg, #f4ead3, #e0cfab);
-}
-
-.deck-box-side {
-  right: 0;
-  bottom: 0;
-  width: 11%;
-  height: 92%;
-  z-index: 3;
-  filter: brightness(0.88);
-  clip-path: polygon(0 0, 100% 3%, 100% 97%, 0 100%);
-  border-radius: 0 0 2cqw 0;
-}
-
-.deck-box-front {
-  left: 0;
-  right: 11%;
-  bottom: 0;
-  height: 92%;
-  z-index: 3;
-  border-left: 0.9cqw solid var(--navy);
-  border-right: 0.9cqw solid var(--navy);
-  border-bottom: 0.9cqw solid var(--navy);
-  border-radius: 0.6cqw 0 0 2cqw;
-  box-shadow: inset 0 -1.2cqw 2cqw rgba(90, 65, 30, 0.12), 0 1.4cqw 3cqw rgba(50, 38, 20, 0.3);
-}
-
-.deck-box-flap {
-  left: 0;
-  right: 0;
-  top: 8%;
-  height: 38%;
-  z-index: 4;
-  border-bottom: 0.9cqw solid var(--navy);
-  border-radius: 1cqw 1cqw 5cqw 5cqw;
-  box-shadow: 0 1cqw 2cqw rgba(50, 38, 20, 0.32), inset 0 0.4cqw 0 rgba(255, 255, 255, 0.45);
-}
-
-.deck-clasp {
-  position: absolute;
-  right: 11%;
-  bottom: 14%;
-  width: 7.5cqw;
-  height: 7.5cqw;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 35% 30%, #fff6d4 0, #e3c670 28%, #a67d2e 70%, #7d5b1d 100%);
-  box-shadow: 0 0.5cqw 1cqw rgba(60, 40, 10, 0.45), inset 0 0 0 0.5cqw rgba(255, 240, 190, 0.55);
-}
-
-.deck-clasp::after {
-  content: "";
-  position: absolute;
-  inset: 26%;
-  border-radius: 50%;
-  border: 0.35cqw solid rgba(110, 76, 18, 0.7);
-  box-shadow: inset 0 0.25cqw 0.5cqw rgba(60, 40, 10, 0.5);
-}
-
-.deck-art {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.deck-art .ink,
-.deck-art .red,
-.deck-art .ice,
-.deck-art .runes {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.1;
-}
-
-.deck-art .ink { stroke: #4b3d2f; }
-.deck-art .red { stroke: #b4452f; fill: rgba(180, 69, 47, 0.08); }
-.deck-art .red.runes { fill: none; stroke-width: 1.3; }
-.deck-art .ice { stroke: #5a86b8; }
-.deck-art .thin { stroke-width: 0.7; fill: none; stroke: #4b3d2f; }
-.deck-art .dashed { stroke-dasharray: 2.6 2.6; fill: none; stroke: #b4452f; }
-.deck-art .stitch {
-  fill: none;
-  stroke: rgba(110, 92, 62, 0.75);
-  stroke-width: 0.9;
-  stroke-dasharray: 3.2 2.6;
-}
-.deck-art .stitch.fine { stroke: rgba(110, 92, 62, 0.35); stroke-width: 0.6; stroke-dasharray: 1.6 2.2; }
-.deck-art .rivet { fill: #b79a5c; stroke: rgba(80, 58, 20, 0.6); stroke-width: 0.6; }
-.deck-art .txt {
-  font-family: "IM Fell English", Georgia, serif;
-  font-style: italic;
-  fill: #4b3d2f;
-}
-
 .deck-cmdr {
   position: absolute;
   left: 7%;
-  bottom: 15%;
-  width: 38%;
+  bottom: 13%;
+  width: 48%;
   height: auto;
   z-index: 5;
   border-radius: 4.5% / 3.2%;
   transform-origin: 50% 100%;
-  transform: rotate(-5deg);
-  box-shadow: 0 1.2cqw 3cqw rgba(0, 0, 0, 0.35);
+  transform: rotate(-3deg);
+  box-shadow: 0 1.4cqw 3.4cqw rgba(0, 0, 0, 0.4);
 }
 
 .deck-caption {
@@ -1093,12 +985,12 @@ a.deck-tile::after {
   box-shadow: 0 0 1.6cqw #f7b87c;
 }
 
-.deck-spark--ice1 { left: 12%; bottom: 62%; }
-.deck-spark--ice2 { left: 24%; bottom: 74%; }
-.deck-spark--ice3 { left: 36%; bottom: 66%; }
-.deck-spark--fire1 { left: 70%; bottom: 80%; }
-.deck-spark--fire2 { left: 82%; bottom: 70%; }
-.deck-spark--fire3 { left: 90%; bottom: 82%; }
+.deck-spark--ice1 { left: 12%; bottom: 66%; }
+.deck-spark--ice2 { left: 26%; bottom: 80%; }
+.deck-spark--ice3 { left: 40%; bottom: 72%; }
+.deck-spark--fire1 { left: 70%; bottom: 84%; }
+.deck-spark--fire2 { left: 82%; bottom: 74%; }
+.deck-spark--fire3 { left: 90%; bottom: 86%; }
 
 .deck-tile:hover::before,
 .deck-tile:focus-visible::before { opacity: 1; }
@@ -1107,21 +999,21 @@ a.deck-tile::after {
 .deck-tile:focus-visible .deck-box { transform: translateX(3%); }
 
 .deck-tile:hover .deck-cmdr,
-.deck-tile:focus-visible .deck-cmdr { transform: translateX(-3%) rotate(-7deg); }
+.deck-tile:focus-visible .deck-cmdr { transform: translateX(-2%) rotate(-5deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -30%) rotate(-9deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-16%, -62%) rotate(-10deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -38%) rotate(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -76%) rotate(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translate(7%, -30%) rotate(9deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(16%, -62%) rotate(10deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-box,
   .deck-cmdr,
-  .deck-fan { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+  .deck-fan { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
 
   .deck-fan--2 { transition-delay: 0.08s; }
   .deck-fan--3 { transition-delay: 0.14s; }
