@@ -886,7 +886,7 @@ a.deck-tile {
 .deck-box {
   position: absolute;
   left: 38%;
-  bottom: 10%;
+  bottom: 7%;
   width: 48%;
   height: 66%;
   z-index: 1;
@@ -954,7 +954,7 @@ a.deck-tile {
 .deck-cmdr {
   position: absolute;
   left: 10%;
-  bottom: 10%;
+  bottom: 7%;
   width: 42%;
   height: auto;
   z-index: 4;
@@ -971,13 +971,13 @@ a.deck-tile {
 .deck-tile:focus-visible .deck-cmdr { transform: translateX(-3%) rotate(-7deg); }
 
 .deck-tile:hover .deck-fan--1,
-.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -30%) rotate(-9deg); }
+.deck-tile:focus-visible .deck-fan--1 { transform: translate(-8%, -22%) rotate(-9deg); }
 
 .deck-tile:hover .deck-fan--2,
-.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -40%) rotate(-1deg); }
+.deck-tile:focus-visible .deck-fan--2 { transform: translate(0, -31%) rotate(-1deg); }
 
 .deck-tile:hover .deck-fan--3,
-.deck-tile:focus-visible .deck-fan--3 { transform: translate(8%, -30%) rotate(9deg); }
+.deck-tile:focus-visible .deck-fan--3 { transform: translate(8%, -22%) rotate(9deg); }
 
 @media (prefers-reduced-motion: no-preference) {
   .deck-box,
