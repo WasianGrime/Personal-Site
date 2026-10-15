@@ -1018,6 +1018,7 @@ a.deck-tile::after {
   left: calc(var(--CW) / -2);
   top: calc(var(--H) / 2 - var(--CH) - 0.6cqw);
   width: var(--CW);
+  max-width: none;
   height: auto;
   border-radius: 4.5% / 3.2%;
   transform-origin: 50% 100%;
@@ -1048,6 +1049,21 @@ a.deck-tile::after {
   transform-style: preserve-3d;
   transform: rotateX(90deg);
   --shade: 0;
+  backface-visibility: hidden;
+}
+
+.dflap-top > .deck-art,
+.dflap-top::after {
+  backface-visibility: hidden;
+}
+
+.dflap-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background: linear-gradient(160deg, #d9c9a4, #c6b28a);
 }
 
 .dflap-lip {
