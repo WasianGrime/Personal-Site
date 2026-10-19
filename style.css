@@ -583,8 +583,22 @@ a.card-link:hover .laptop-screen {
   object-position: 45% center;
 }
 
+.gallery .photo-real--wide {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery .photo-real--wide img {
+  position: absolute;
+  inset: 0;
+  object-position: 50% 45%;
+}
+
 @media (max-width: 640px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery .photo-real--wide { aspect-ratio: 3 / 2; }
 }
 
 .book-grid {
