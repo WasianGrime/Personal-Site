@@ -1077,19 +1077,13 @@ a.deck-tile::after {
   100% { opacity: 0; transform: translateY(-14cqw) scale(1); }
 }
 
-/* ---- YouTube channel tile ---- */
+/* ---- YouTube channel tile: a tilted phone showing the channel ---- */
 a.yt-tile {
   position: relative;
   padding: 0;
   overflow: hidden;
   aspect-ratio: 1 / 1;
   container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2cqw;
-  text-align: center;
 }
 
 a.yt-tile::before {
@@ -1098,64 +1092,205 @@ a.yt-tile::before {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60% 50% at 50% 34%, rgba(255, 70, 110, 0.16), transparent 72%),
-    radial-gradient(40% 35% at 85% 85%, rgba(255, 170, 90, 0.12), transparent 75%);
+    radial-gradient(55% 50% at 55% 42%, rgba(255, 70, 110, 0.2), transparent 72%),
+    radial-gradient(40% 35% at 15% 88%, rgba(255, 170, 90, 0.14), transparent 75%);
 }
 
-.yt-avatar-wrap {
-  position: relative;
+.yt-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 190cqw;
+}
+
+.yt-shadow {
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  width: 48%;
+  height: 5%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(50, 20, 25, 0.35), transparent 70%);
+}
+
+.yt-phone {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 40cqw;
+  height: 80cqw;
+  margin-left: -20cqw;
+  box-sizing: border-box;
+  padding: 1.1cqw;
+  border-radius: 6cqw;
+  background: linear-gradient(145deg, #34343a, #101013);
+  box-shadow:
+    0 0 0 0.3cqw #46464d inset,
+    1.6cqw 2.4cqw 5cqw rgba(30, 10, 15, 0.38),
+    0 0.6cqw 1.2cqw rgba(0, 0, 0, 0.3);
+  transform: rotateZ(-8deg) rotateY(-20deg) rotateX(8deg);
+  transform-origin: 50% 55%;
   display: block;
-  width: 36cqw;
-  height: 36cqw;
-  margin-bottom: 1.5cqw;
+}
+
+.yt-island {
+  position: absolute;
+  top: 2.4cqw;
+  left: 50%;
+  width: 10cqw;
+  height: 2.8cqw;
+  margin-left: -5cqw;
+  border-radius: 2cqw;
+  background: #050506;
+  z-index: 3;
+}
+
+.yt-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5cqw;
+  background: #0f0f0f;
+  color: #fff;
+  text-align: left;
+}
+
+.yt-screen > * { flex-shrink: 0; }
+
+.yt-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5cqw 4cqw 1.2cqw;
+  font-family: "Archivo", sans-serif;
+  font-size: 2.1cqw;
+  font-weight: 500;
+}
+
+.yt-battery {
+  width: 4cqw;
+  height: 1.9cqw;
+  border-radius: 0.6cqw;
+  border: 0.3cqw solid rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, #fff 70%, transparent 70%);
+  background-clip: content-box;
+  padding: 0.2cqw;
+  box-sizing: border-box;
+}
+
+.yt-banner {
+  display: block;
+  width: calc(100% - 3cqw);
+  height: 8.5cqw;
+  margin: 1cqw auto 0;
+  border-radius: 1.6cqw;
+  object-fit: cover;
+}
+
+.yt-chan {
+  display: flex;
+  gap: 2.4cqw;
+  align-items: center;
+  padding: 2.4cqw 2.6cqw 0;
 }
 
 .yt-avatar {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 10cqw;
+  height: 10cqw;
+  flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 1.4cqw 3.2cqw rgba(60, 20, 30, 0.28);
 }
 
-.yt-badge {
+.yt-chan-text { display: flex; flex-direction: column; min-width: 0; }
+
+.yt-chan-name {
+  font-family: "Archivo", sans-serif;
+  font-size: 3.4cqw;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.yt-chan-meta {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.9cqw;
+  line-height: 1.35;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+.yt-sub {
+  display: block;
+  margin: 2.4cqw 2.6cqw 0;
+  padding: 1.5cqw 0;
+  border-radius: 99cqw;
+  background: #fff;
+  color: #0f0f0f;
+  text-align: center;
+  font-family: "Archivo", sans-serif;
+  font-size: 2.6cqw;
+  font-weight: 500;
+}
+
+.yt-tabs {
+  display: flex;
+  gap: 3.2cqw;
+  margin-top: 2.4cqw;
+  padding: 0 2.6cqw;
+  border-bottom: 0.2cqw solid #303030;
+  font-family: "Archivo", sans-serif;
+  font-size: 2.2cqw;
+  color: #aaa;
+}
+
+.yt-tabs span { padding-bottom: 1.2cqw; }
+
+.yt-tabs .yt-on {
+  color: #fff;
+  border-bottom: 0.4cqw solid #fff;
+  margin-bottom: -0.2cqw;
+}
+
+.yt-video { display: block; padding: 2.2cqw 0 0; }
+
+.yt-thumb { position: relative; display: block; }
+
+.yt-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.yt-dur {
   position: absolute;
-  right: -3cqw;
-  bottom: 1cqw;
-  width: 13cqw;
-  height: 9.4cqw;
-  border-radius: 2.4cqw;
-  background: #ff0033;
-  box-shadow: 0 0.6cqw 1.8cqw rgba(60, 0, 15, 0.4);
+  right: 1.4cqw;
+  bottom: 1.2cqw;
+  padding: 0.3cqw 0.9cqw;
+  border-radius: 0.6cqw;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: "Archivo", sans-serif;
+  font-size: 1.8cqw;
 }
 
-.yt-badge::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-38%, -50%);
-  border-left: 3.4cqw solid #fff;
-  border-top: 2.2cqw solid transparent;
-  border-bottom: 2.2cqw solid transparent;
+.yt-vtitle {
+  display: block;
+  padding: 1.6cqw 2.6cqw 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 2.5cqw;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-.yt-name {
-  position: relative;
-  font-family: "Fraunces", Georgia, serif;
-  font-weight: 600;
-  font-size: 6.2cqw;
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.yt-handle {
-  position: relative;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 3cqw;
-  letter-spacing: 0.04em;
-  color: var(--muted);
+.yt-vmeta {
+  display: block;
+  padding: 0.6cqw 2.6cqw 0;
+  font-family: "Archivo", sans-serif;
+  font-size: 1.9cqw;
+  color: #aaa;
 }
 
 .yt-caption {
@@ -1163,6 +1298,7 @@ a.yt-tile::before {
   left: 7%;
   right: 7%;
   bottom: 4.5%;
+  z-index: 6;
   display: flex;
   justify-content: space-between;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -1174,13 +1310,11 @@ a.yt-tile::before {
 
 a.yt-tile:hover .yt-caption { color: var(--ink); }
 
+a.yt-tile:hover .yt-phone,
+a.yt-tile:focus-visible .yt-phone {
+  transform: translateY(-1.6cqw) rotateZ(-3deg) rotateY(-10deg) rotateX(4deg);
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .yt-avatar,
-  .yt-badge { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
-
-  a.yt-tile:hover .yt-avatar,
-  a.yt-tile:focus-visible .yt-avatar { transform: scale(1.05); }
-
-  a.yt-tile:hover .yt-badge,
-  a.yt-tile:focus-visible .yt-badge { transform: scale(1.14) rotate(-4deg); }
+  .yt-phone { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
 }
