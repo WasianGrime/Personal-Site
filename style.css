@@ -1324,13 +1324,80 @@ a.yt-tile .yt-sub.is-subscribed:hover { filter: none; }
 
 .yt-video { display: block; padding: 2.2cqw 0 0; }
 
-.yt-thumb { position: relative; display: block; }
+.yt-thumb { position: relative; display: block; overflow: hidden; }
 
 .yt-thumb img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  transition: transform 12s linear, filter 0.3s ease;
+}
+
+.yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9cqw;
+  height: 9cqw;
+  margin: -4.5cqw 0 0 -4.5cqw;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.62);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.yt-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3.6cqw;
+  height: 4.2cqw;
+  margin: -2.1cqw 0 0 -1.5cqw;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.yt-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.7cqw;
+  background: rgba(255, 255, 255, 0.28);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.yt-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #f03;
+}
+
+.yt-video:hover .yt-thumb img { transform: scale(1.12); filter: brightness(0.9); }
+.yt-video:hover .yt-bar { opacity: 1; }
+.yt-video:hover .yt-bar > span { animation: ytProgress 14s linear forwards; }
+.yt-video:hover .yt-play { animation: ytPlayPop 1.1s ease forwards; }
+
+@keyframes ytProgress { from { width: 0; } to { width: 100%; } }
+
+@keyframes ytPlayPop {
+  0% { opacity: 0; transform: scale(0.6); }
+  18% { opacity: 1; transform: scale(1); }
+  70% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .yt-thumb img { transition: none; }
+  .yt-video:hover .yt-thumb img { transform: none; }
+  .yt-video:hover .yt-bar > span { animation: none; width: 35%; }
+  .yt-video:hover .yt-play { animation: none; opacity: 1; transform: scale(1); }
 }
 
 .yt-dur {
