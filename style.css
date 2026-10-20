@@ -951,8 +951,8 @@ a.deck-tile {
   pointer-events: none;
   opacity: 0.65;
   background:
-    radial-gradient(60% 55% at 22% 78%, rgba(110, 165, 230, 0.28), transparent 70%),
-    radial-gradient(55% 50% at 86% 35%, rgba(240, 140, 80, 0.24), transparent 70%);
+    radial-gradient(circle at 34% 72%, rgba(110, 165, 230, 0.28) 0, transparent 32cqw),
+    radial-gradient(circle at 72% 38%, rgba(240, 140, 80, 0.24) 0, transparent 27cqw);
 }
 
 a.deck-tile .deck-frame::after {
@@ -1151,7 +1151,7 @@ a.yt-tile::before {
 .yt-shadow {
   position: absolute;
   left: 22%;
-  bottom: 10%;
+  top: 79%;
   width: 56%;
   height: 2.6%;
   border-radius: 50%;
