@@ -1115,7 +1115,7 @@ a.yt-tile::before {
 .yt-phone {
   position: absolute;
   left: 50%;
-  top: 6%;
+  top: 7%;
   width: 40cqw;
   height: 80cqw;
   margin-left: -20cqw;
@@ -1127,7 +1127,7 @@ a.yt-tile::before {
     0 0 0 0.3cqw #46464d inset,
     1.6cqw 2.4cqw 5cqw rgba(30, 10, 15, 0.38),
     0 0.6cqw 1.2cqw rgba(0, 0, 0, 0.3);
-  transform: rotateZ(-8deg) rotateY(-20deg) rotateX(8deg);
+  transform: rotateZ(-8deg) rotateY(-20deg) rotateX(8deg) scale(1.12);
   transform-origin: 50% 55%;
   display: block;
 }
@@ -1223,6 +1223,7 @@ a.yt-tile::before {
 }
 
 .yt-sub {
+  position: relative;
   display: block;
   margin: 2.4cqw 2.6cqw 0;
   padding: 1.5cqw 0;
@@ -1233,7 +1234,27 @@ a.yt-tile::before {
   font-family: "Archivo", sans-serif;
   font-size: 2.6cqw;
   font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+.yt-sub::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 99cqw;
+  border: 0.5cqw solid rgba(255, 40, 40, 0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.yt-sub.is-subscribed {
+  background: #ff0000;
+  color: #fff;
+}
+
+a.yt-tile .yt-sub:hover { filter: brightness(0.94); }
+a.yt-tile .yt-sub.is-subscribed:hover { filter: none; }
 
 .yt-tabs {
   display: flex;
@@ -1312,9 +1333,26 @@ a.yt-tile:hover .yt-caption { color: var(--ink); }
 
 a.yt-tile:hover .yt-phone,
 a.yt-tile:focus-visible .yt-phone {
-  transform: translateY(-1.6cqw) rotateZ(-3deg) rotateY(-10deg) rotateX(4deg);
+  transform: translateY(-1.6cqw) rotateZ(-3deg) rotateY(-10deg) rotateX(4deg) scale(1.12);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .yt-phone { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .yt-sub.is-subscribed { animation: ytPop 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  .yt-sub.is-subscribed::after { animation: ytRing 0.7s ease-out; }
+}
+
+@keyframes ytPop {
+  0% { transform: scale(1); }
+  25% { transform: scale(0.92); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ytRing {
+  0% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.5, 1.9); }
 }
