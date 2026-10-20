@@ -1076,3 +1076,111 @@ a.deck-tile::after {
   18% { opacity: 0.95; }
   100% { opacity: 0; transform: translateY(-14cqw) scale(1); }
 }
+
+/* ---- YouTube channel tile ---- */
+a.yt-tile {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2cqw;
+  text-align: center;
+}
+
+a.yt-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% 34%, rgba(255, 70, 110, 0.16), transparent 72%),
+    radial-gradient(40% 35% at 85% 85%, rgba(255, 170, 90, 0.12), transparent 75%);
+}
+
+.yt-avatar-wrap {
+  position: relative;
+  display: block;
+  width: 36cqw;
+  height: 36cqw;
+  margin-bottom: 1.5cqw;
+}
+
+.yt-avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1.4cqw 3.2cqw rgba(60, 20, 30, 0.28);
+}
+
+.yt-badge {
+  position: absolute;
+  right: -3cqw;
+  bottom: 1cqw;
+  width: 13cqw;
+  height: 9.4cqw;
+  border-radius: 2.4cqw;
+  background: #ff0033;
+  box-shadow: 0 0.6cqw 1.8cqw rgba(60, 0, 15, 0.4);
+}
+
+.yt-badge::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-38%, -50%);
+  border-left: 3.4cqw solid #fff;
+  border-top: 2.2cqw solid transparent;
+  border-bottom: 2.2cqw solid transparent;
+}
+
+.yt-name {
+  position: relative;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 6.2cqw;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.yt-handle {
+  position: relative;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 3cqw;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.yt-caption {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 4.5%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.5cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+a.yt-tile:hover .yt-caption { color: var(--ink); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .yt-avatar,
+  .yt-badge { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  a.yt-tile:hover .yt-avatar,
+  a.yt-tile:focus-visible .yt-avatar { transform: scale(1.05); }
+
+  a.yt-tile:hover .yt-badge,
+  a.yt-tile:focus-visible .yt-badge { transform: scale(1.14) rotate(-4deg); }
+}
