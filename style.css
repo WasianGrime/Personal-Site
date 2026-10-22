@@ -1153,7 +1153,7 @@ a.yt-tile::before {
 .yt-shadow {
   position: absolute;
   left: 22%;
-  top: 87%;
+  top: 90%;
   width: 56%;
   height: 2.6%;
   border-radius: 50%;
@@ -1165,9 +1165,9 @@ a.yt-tile::before {
   left: 50%;
   top: 50%;
   width: 40cqw;
-  height: 88cqw;
+  height: 95cqw;
   margin-left: -20cqw;
-  margin-top: -47cqw;
+  margin-top: -51cqw;
   box-sizing: border-box;
   padding: 1.1cqw;
   border-radius: 6cqw;
