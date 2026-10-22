@@ -877,15 +877,10 @@ section.block h2 {
   }
 }
 
+/* never start at opacity 0: if frames are throttled the tiles must still be visible */
 @keyframes dropIn {
-  from {
-    opacity: 0;
-    transform: translateY(-38px) rotate(var(--drop-rot, 0deg));
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0deg);
-  }
+  from { transform: translateY(-38px) rotate(var(--drop-rot, 0deg)); }
+  to { transform: translateY(0) rotate(0deg); }
 }
 
 /* ---- deck box tile: black sideloader deck box behind a large commander card; cards slide up on hover ---- */
