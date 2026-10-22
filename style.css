@@ -1504,6 +1504,10 @@ a.yt-tile:focus-visible .yt-phone {
 .rail { grid-template-columns: repeat(4, 1fr); grid-auto-rows: calc((100cqw - 3 * var(--gap)) / 4); }
 #view-hobbies .grid-2 { grid-template-columns: repeat(3, 1fr); grid-auto-rows: calc((100cqw - 2 * var(--gap)) / 3); }
 
+/* Safari: grid items with an aspect-ratio don't stretch on their own and would collapse */
+.rail > *,
+#view-hobbies .grid-2 > * { justify-self: stretch; width: 100%; min-width: 0; }
+
 .rail > .card-fill .photo-fill,
 #view-hobbies .grid-2 > .card-fill .photo-fill { aspect-ratio: auto; height: 100%; }
 
