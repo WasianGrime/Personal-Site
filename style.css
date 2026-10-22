@@ -763,7 +763,8 @@ a.book-card-link:hover .arrow { color: var(--accent); }
 }
 
 .about-cards section.block { margin-top: 0; }
-.about-cards .about-contact { grid-column: 1 / -1; }
+.about-cards .about-contact,
+.about-cards .about-now { grid-column: 1 / -1; }
 
 @media (max-width: 900px) {
   .about-layout { grid-template-columns: 1fr; }
@@ -848,6 +849,7 @@ section.block h2 {
 
 .contact-list .label { width: 90px; flex-shrink: 0; }
 
+.contact-list li > span:not(.label),
 .contact-list a,
 .contact-list span.pending {
   font-size: 0.98rem;
