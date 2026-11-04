@@ -1612,7 +1612,7 @@ a.yt-tile:focus-visible .yt-phone {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(35deg, rgba(245, 243, 237, 0.96) 0, rgba(245, 243, 237, 0.88) 22%, rgba(245, 243, 237, 0) 52%);
+  background: linear-gradient(35deg, rgba(245, 243, 237, 0.96) 0, rgba(245, 243, 237, 0.88) 26%, rgba(245, 243, 237, 0) 56%);
   transition: opacity 0.4s ease;
 }
 
@@ -1628,7 +1628,7 @@ a.yt-tile:focus-visible .yt-phone {
   transition: opacity 0.2s ease;
 }
 
-.gun-eyebrow { left: 7cqw; bottom: 36cqw; }
+.gun-eyebrow { left: 7cqw; bottom: 44cqw; color: var(--ink-soft); }
 .gun-hint { right: 6cqw; top: 6cqw; }
 .gun-hint-tap { display: none; }
 
@@ -1645,7 +1645,7 @@ a.yt-tile:focus-visible .yt-phone {
   display: flex;
   flex-direction: column;
   font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-size: 15cqw;
+  font-size: 18cqw;
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.025em;
