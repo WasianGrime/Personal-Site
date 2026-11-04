@@ -1580,3 +1580,110 @@ a.yt-tile:focus-visible .yt-phone {
   .rail > :nth-child(7) { aspect-ratio: 2 / 1; }
   .rail > :nth-child(2) { aspect-ratio: 1 / 2.05; }
 }
+
+/* ---- Gundam tile: the name sits in front until hover, then the kit and the name swap layers ---- */
+.gun-tile {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  container-type: inline-size;
+  cursor: default;
+  outline-offset: -2px;
+}
+
+.gun-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background:
+    radial-gradient(60% 55% at 60% 50%, rgba(80, 130, 220, 0.2), transparent 75%),
+    radial-gradient(40% 35% at 15% 85%, rgba(150, 170, 230, 0.16), transparent 75%);
+}
+
+.gun-eyebrow,
+.gun-hint {
+  position: absolute;
+  z-index: 4;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.gun-eyebrow { top: 6cqw; left: 7cqw; }
+.gun-hint { right: 7cqw; bottom: 6cqw; }
+.gun-hint-tap { display: none; }
+
+@media (hover: none) {
+  .gun-hint-hover { display: none; }
+  .gun-hint-tap { display: inline; }
+}
+
+.gun-name {
+  position: absolute;
+  z-index: 3;
+  left: 7cqw;
+  right: 7cqw;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 19cqw;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  transform: translateY(-50%);
+  transform-origin: 20% 50%;
+  pointer-events: none;
+}
+
+.gun-img {
+  position: absolute;
+  z-index: 1;
+  left: -3cqw;
+  top: 50%;
+  width: 104cqw;
+  max-width: none;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-46%) scale(0.86);
+  transform-origin: 50% 60%;
+  filter: drop-shadow(0 2.4cqw 3.2cqw rgba(30, 45, 90, 0.28));
+  pointer-events: none;
+}
+
+.gun-tile:hover .gun-hint,
+.gun-tile:focus-visible .gun-hint,
+.gun-tile.is-on .gun-hint { opacity: 0; }
+
+.gun-hint { transition: opacity 0.2s ease; }
+
+.gun-tile:hover::before,
+.gun-tile:focus-visible::before,
+.gun-tile.is-on::before { opacity: 1; }
+
+.gun-tile:hover .gun-name,
+.gun-tile:focus-visible .gun-name,
+.gun-tile.is-on .gun-name {
+  z-index: 1;
+  opacity: 0.16;
+  transform: translateY(-53%) scale(0.94);
+}
+
+.gun-tile:hover .gun-img,
+.gun-tile:focus-visible .gun-img,
+.gun-tile.is-on .gun-img {
+  z-index: 3;
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gun-name { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, z-index 0s linear 0.2s; }
+  .gun-img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease, z-index 0s linear 0.2s; }
+}
