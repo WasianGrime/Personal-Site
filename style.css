@@ -1581,7 +1581,7 @@ a.yt-tile:focus-visible .yt-phone {
   .rail > :nth-child(2) { aspect-ratio: 1 / 2.05; }
 }
 
-/* ---- Gundam tile: the name sits in front until hover, then the kit and the name swap layers ---- */
+/* ---- Gundam tile: big close-up with an aura, name in the corner; on hover the kit and the name swap layers ---- */
 .gun-tile {
   position: relative;
   padding: 0;
@@ -1591,16 +1591,29 @@ a.yt-tile:focus-visible .yt-phone {
   outline-offset: -2px;
 }
 
+/* aura behind the kit */
 .gun-tile::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -10%;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
   background:
-    radial-gradient(60% 55% at 60% 50%, rgba(80, 130, 220, 0.2), transparent 75%),
-    radial-gradient(40% 35% at 15% 85%, rgba(150, 170, 230, 0.16), transparent 75%);
+    radial-gradient(42% 40% at 58% 40%, rgba(90, 150, 255, 0.5), rgba(90, 150, 255, 0.18) 55%, transparent 75%),
+    radial-gradient(60% 55% at 40% 60%, rgba(160, 120, 255, 0.2), transparent 75%),
+    radial-gradient(30% 28% at 75% 20%, rgba(120, 220, 255, 0.28), transparent 80%);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
+}
+
+/* soft paper-colored fade so the corner text stays readable over the kit */
+.gun-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(35deg, rgba(245, 243, 237, 0.96) 0, rgba(245, 243, 237, 0.88) 22%, rgba(245, 243, 237, 0) 52%);
+  transition: opacity 0.4s ease;
 }
 
 .gun-eyebrow,
@@ -1612,10 +1625,11 @@ a.yt-tile:focus-visible .yt-phone {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
+  transition: opacity 0.2s ease;
 }
 
-.gun-eyebrow { top: 6cqw; left: 7cqw; }
-.gun-hint { right: 7cqw; bottom: 6cqw; }
+.gun-eyebrow { left: 7cqw; bottom: 36cqw; }
+.gun-hint { right: 6cqw; top: 6cqw; }
 .gun-hint-tap { display: none; }
 
 @media (hover: none) {
@@ -1627,61 +1641,71 @@ a.yt-tile:focus-visible .yt-phone {
   position: absolute;
   z-index: 3;
   left: 7cqw;
-  right: 7cqw;
-  top: 33%;
+  bottom: 6cqw;
   display: flex;
   flex-direction: column;
   font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-size: 19cqw;
+  font-size: 15cqw;
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.025em;
   color: var(--ink);
-  transform: translateY(-50%);
-  transform-origin: 20% 50%;
+  transform-origin: 0 100%;
   pointer-events: none;
 }
 
 .gun-img {
   position: absolute;
   z-index: 1;
-  left: -3cqw;
-  top: 50%;
-  width: 104cqw;
+  left: -34cqw;
+  top: -17cqw;
+  width: 168cqw;
   max-width: none;
   height: auto;
-  transform: translate(1%, -27%) scale(0.76);
-  transform-origin: 50% 60%;
-  filter: drop-shadow(0 2.4cqw 3.2cqw rgba(30, 45, 90, 0.28));
+  filter:
+    drop-shadow(0 0 2.6cqw rgba(110, 165, 255, 0.7))
+    drop-shadow(0 2.4cqw 3.2cqw rgba(30, 45, 90, 0.3));
+  transform-origin: 50% 40%;
   pointer-events: none;
 }
 
+.gun-tile:hover::before,
+.gun-tile:focus-visible::before,
+.gun-tile.is-on::before { transform: scale(1.12); }
+
+.gun-tile:hover::after,
+.gun-tile:focus-visible::after,
+.gun-tile.is-on::after,
+.gun-tile:hover .gun-eyebrow,
+.gun-tile:focus-visible .gun-eyebrow,
+.gun-tile.is-on .gun-eyebrow,
 .gun-tile:hover .gun-hint,
 .gun-tile:focus-visible .gun-hint,
 .gun-tile.is-on .gun-hint { opacity: 0; }
-
-.gun-hint { transition: opacity 0.2s ease; }
-
-.gun-tile:hover::before,
-.gun-tile:focus-visible::before,
-.gun-tile.is-on::before { opacity: 1; }
 
 .gun-tile:hover .gun-name,
 .gun-tile:focus-visible .gun-name,
 .gun-tile.is-on .gun-name {
   z-index: 1;
-  opacity: 0.16;
-  transform: translateY(calc(-50% + 14cqw)) scale(0.94);
+  opacity: 0.18;
+  transform: translateY(2cqw) scale(0.94);
 }
 
 .gun-tile:hover .gun-img,
 .gun-tile:focus-visible .gun-img,
 .gun-tile.is-on .gun-img {
   z-index: 3;
-  transform: translateY(-50%) scale(1);
+  transform: scale(1.07);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .gun-name { transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, z-index 0s linear 0.2s; }
-  .gun-img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease, z-index 0s linear 0.2s; }
+  .gun-img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), z-index 0s linear 0.2s; }
+  .gun-tile::before { animation: gunAura 4.5s ease-in-out infinite alternate; }
+  .gun-tile:hover::before, .gun-tile:focus-visible::before, .gun-tile.is-on::before { animation: none; }
+}
+
+@keyframes gunAura {
+  from { opacity: 0.7; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.06); }
 }
