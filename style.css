@@ -192,6 +192,28 @@ footer.site {
   padding-block: 22px;
 }
 
+.pho-end {
+  padding: 56px 16px 30px;
+  text-align: center;
+}
+
+.pho-gif {
+  display: block;
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+  image-rendering: pixelated;
+}
+
+.pho-caption {
+  margin: 10px 0 0;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
 footer.site .shell {
   display: flex;
   justify-content: space-between;
