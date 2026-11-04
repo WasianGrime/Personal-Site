@@ -193,23 +193,23 @@ footer.site {
 }
 
 .pho-end {
-  padding: 56px 16px 30px;
+  padding: 40px 16px 14px;
   text-align: center;
 }
 
 .pho-gif {
   display: block;
-  width: 280px;
-  max-width: 80%;
+  width: 140px;
+  max-width: 60%;
   height: auto;
   margin: 0 auto;
   image-rendering: pixelated;
 }
 
 .pho-caption {
-  margin: 10px 0 0;
+  margin: 6px 0 0;
   font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   font-style: italic;
   color: var(--ink-soft);
 }
