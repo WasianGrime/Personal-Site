@@ -1818,7 +1818,7 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
   position: absolute;
   z-index: 1;
   left: 22cqw;
-  top: 38cqw;
+  top: 35cqw;
   width: 56cqw;
   height: 90cqw;
   transform-origin: 50% 0;
@@ -1844,8 +1844,8 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
   display: flex;
   align-items: center;
   gap: 2cqw;
-  margin-top: 4cqw;
-  padding: 2.4cqw 2.4cqw;
+  margin-top: 3.4cqw;
+  padding: 2cqw 2.4cqw;
   border-radius: 2cqw 2cqw 0 0;
   background: #12232e;
   color: #fff;
@@ -1853,8 +1853,8 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
 
 .halo-plus {
   position: relative;
-  width: 5.6cqw;
-  height: 5.6cqw;
+  width: 5cqw;
+  height: 5cqw;
   flex-shrink: 0;
   border: 0.5cqw solid #55cdc9;
   border-radius: 50%;
@@ -1870,37 +1870,103 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
   transform: translate(-50%, -50%);
 }
 
-.halo-plus::before { width: 2.6cqw; height: 0.5cqw; }
-.halo-plus::after { width: 0.5cqw; height: 2.6cqw; }
+.halo-plus::before { width: 2.3cqw; height: 0.5cqw; }
+.halo-plus::after { width: 0.5cqw; height: 2.3cqw; }
 
 .halo-head-text { display: flex; flex-direction: column; font-family: "Archivo", sans-serif; line-height: 1.15; }
-.halo-head-text b { font-size: 3.6cqw; font-weight: 500; letter-spacing: 0.1em; }
-.halo-head-text i { font-size: 1.9cqw; font-style: normal; color: #b8c6cc; }
+.halo-head-text b { font-size: 3.2cqw; font-weight: 500; letter-spacing: 0.1em; }
+.halo-head-text i { font-size: 1.7cqw; font-style: normal; color: #b8c6cc; }
+
+.halo-clock {
+  margin-left: auto;
+  font-family: "Archivo", sans-serif;
+  font-size: 3cqw;
+  font-weight: 500;
+  white-space: nowrap;
+}
 
 .halo-list {
   display: flex;
   flex-direction: column;
-  gap: 1.6cqw;
-  padding: 3cqw 2.4cqw;
+  gap: 1.4cqw;
+  padding: 2.2cqw 2cqw 3cqw;
   background: #f4f6f5;
+  font-family: "Archivo", sans-serif;
 }
 
-.halo-row {
+/* the ticket card at the top of the screen */
+.halo-ticket {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.4cqw 2cqw;
+  padding: 1.8cqw 2.2cqw;
+  border: 0.5cqw solid #0f5f63;
+  border-radius: 2cqw;
+  background: #fff;
+}
+
+.halo-ticket-id { display: flex; align-items: center; gap: 1.6cqw; }
+.halo-ticket-id b { font-size: 5cqw; font-weight: 500; line-height: 1; }
+.halo-ticket-wait { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.05; }
+.halo-ticket-wait i { font-size: 1.5cqw; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: #46565f; }
+.halo-ticket-wait u { text-decoration: none; font-size: 4.6cqw; font-weight: 500; color: #0f5f63; }
+.halo-ticket small { grid-column: 1 / -1; font-size: 1.9cqw; color: #46565f; }
+
+.halo-key {
   display: flex;
   align-items: center;
-  gap: 2cqw;
-  padding: 2cqw 2.4cqw;
-  border-radius: 1.6cqw;
+  justify-content: space-between;
+  gap: 0.8cqw;
+  padding: 1.2cqw 1.4cqw;
+  border-radius: 1.4cqw;
   background: #fff;
-  font-family: "Archivo", sans-serif;
-  font-size: 3.4cqw;
 }
 
-.halo-row b { font-weight: 500; min-width: 9cqw; }
-.halo-row em { padding: 0.4cqw 1.6cqw; border-radius: 99cqw; background: #f6e3a1; font-size: 2.2cqw; font-style: normal; color: #5a4300; }
-.halo-row em.lv4 { background: #cfe6c6; color: #26471f; }
-.halo-row u { margin-left: auto; text-decoration: none; font-weight: 500; }
+.halo-key i { margin-right: 0.6cqw; font-size: 1.5cqw; font-style: normal; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #46565f; }
+
+.halo-cols {
+  display: grid;
+  grid-template-columns: 8.4cqw 6.2cqw 1fr auto;
+  gap: 1.4cqw;
+  padding: 0 2.2cqw;
+}
+
+.halo-cols i { font-size: 1.4cqw; font-style: normal; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #46565f; }
+.halo-cols i:last-child { text-align: right; }
+
+.halo-row {
+  display: grid;
+  grid-template-columns: 8.4cqw 6.2cqw 1fr auto;
+  align-items: center;
+  gap: 1.4cqw;
+  padding: 1.7cqw 2.2cqw;
+  border-radius: 1.6cqw;
+  background: #fff;
+  font-size: 3cqw;
+}
+
+.halo-row b { font-weight: 500; }
+.halo-row span { font-size: 2.1cqw; color: #2e3e47; white-space: nowrap; }
+.halo-row u { text-decoration: none; font-weight: 500; text-align: right; }
 .halo-row--now { background: #fdeee4; }
+
+.halo-ticket em,
+.halo-key em,
+.halo-row em {
+  display: inline-block;
+  padding: 0.4cqw 1.5cqw;
+  border-radius: 99cqw;
+  font-size: 1.8cqw;
+  font-style: normal;
+  white-space: nowrap;
+  background: #f6e3a1;
+  color: #5a4300;
+}
+
+.halo-row em { justify-self: start; }
+.halo-ticket em.lv4, .halo-key em.lv4, .halo-row em.lv4 { background: #cfe6c6; color: #26471f; }
+.halo-key em.lv2 { background: #f6cdb8; color: #6f2c0c; }
 
 a.halo-tile:hover .halo-kiosk,
 a.halo-tile:focus-visible .halo-kiosk { transform: translateY(-3cqw) scale(1.18); }
