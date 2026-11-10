@@ -1817,10 +1817,12 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
 .halo-kiosk {
   position: absolute;
   z-index: 1;
-  left: 7cqw;
-  top: 36cqw;
-  width: 58cqw;
-  height: 84cqw;
+  left: 22cqw;
+  top: 38cqw;
+  width: 56cqw;
+  height: 90cqw;
+  transform-origin: 50% 0;
+  transform: scale(1.18);
   display: block;
   padding: 0 4.5cqw;
   border-radius: 6cqw 6cqw 0 0;
@@ -1900,75 +1902,13 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
 .halo-row u { margin-left: auto; text-decoration: none; font-weight: 500; }
 .halo-row--now { background: #fdeee4; }
 
-.halo-phone {
-  position: absolute;
-  z-index: 2;
-  right: 6cqw;
-  top: 50cqw;
-  width: 29cqw;
-  height: 62cqw;
-  display: block;
-  overflow: hidden;
-  border: 1.4cqw solid #12232e;
-  border-radius: 5.4cqw;
-  background: #f4f6f5;
-  box-shadow: 1.6cqw 2.2cqw 4.5cqw rgba(18, 35, 46, 0.3);
-  transform: rotate(5deg);
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.halo-phone-head {
-  display: block;
-  padding: 3.2cqw 2.4cqw 2.4cqw;
-  background: #12232e;
-  font-family: "Archivo", sans-serif;
-  font-size: 2.8cqw;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: #fff;
-}
-
-.halo-ticket {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.4cqw;
-  margin: 2cqw 1.8cqw 0;
-  padding: 1.8cqw 1.8cqw;
-  border: 0.5cqw solid #0f5f63;
-  border-radius: 1.8cqw;
-  background: #fff;
-  font-family: "Archivo", sans-serif;
-}
-
-.halo-ticket b { font-size: 3.2cqw; font-weight: 500; }
-.halo-ticket u { text-decoration: none; font-size: 2.8cqw; white-space: nowrap; font-weight: 500; color: #0f5f63; }
-
-.halo-help {
-  display: block;
-  margin: 2cqw 1.8cqw 0;
-  padding: 2.4cqw 2cqw;
-  border-radius: 1.8cqw;
-  background: #b83a0e;
-  font-family: "Archivo", sans-serif;
-  font-size: 2.8cqw;
-  font-weight: 500;
-  text-align: center;
-  color: #fff;
-}
-
 a.halo-tile:hover .halo-kiosk,
-a.halo-tile:focus-visible .halo-kiosk { transform: translateY(-2.5cqw); }
-
-a.halo-tile:hover .halo-phone,
-a.halo-tile:focus-visible .halo-phone { transform: translateY(-5cqw) rotate(2deg); }
+a.halo-tile:focus-visible .halo-kiosk { transform: translateY(-3cqw) scale(1.18); }
 
 @media (prefers-reduced-motion: no-preference) {
   a.halo-tile:hover .halo-row--now { animation: haloNow 1.2s ease-in-out infinite; }
   a.halo-tile:hover .halo-glow { animation: haloGlow 1.6s ease-in-out infinite; }
-  a.halo-tile:hover .halo-help { animation: haloHelp 1.2s ease-in-out infinite; }
 }
 
 @keyframes haloNow { 50% { background: #fbd9bd; } }
 @keyframes haloGlow { 50% { box-shadow: 0 0 5cqw rgba(85, 205, 201, 1); } }
-@keyframes haloHelp { 50% { background: #d4490f; } }
