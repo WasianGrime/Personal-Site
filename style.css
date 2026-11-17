@@ -1848,3 +1848,80 @@ a.halo-tile:hover .halo-arrow { transform: translate(0.8cqw, -0.8cqw); }
 @media (prefers-reduced-motion: reduce) {
   .halo-tower, .halo-arrow { transition: none; }
 }
+
+/* ---- hobby photo tile: a photo with the hobby's name in the corner ---- */
+.hobby-tile {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  container-type: inline-size;
+  background: #1a1210;
+  color: #fff;
+}
+
+.hobby-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 32%;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hobby-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(10, 6, 5, 0.82) 0, rgba(10, 6, 5, 0.45) 26%, rgba(10, 6, 5, 0) 52%);
+}
+
+.hobby-eyebrow,
+.hobby-name,
+.hobby-sub {
+  position: absolute;
+  z-index: 1;
+  left: 7cqw;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hobby-eyebrow {
+  top: 6cqw;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.6cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hobby-name {
+  bottom: 12cqw;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 11cqw;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.hobby-sub {
+  bottom: 6cqw;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 2.8cqw;
+  letter-spacing: 0.1em;
+  color: #f3d27a;
+}
+
+.hobby-tile:hover .hobby-img,
+.hobby-tile:focus-visible .hobby-img { transform: scale(1.06); }
+
+.hobby-tile:hover .hobby-name,
+.hobby-tile:focus-visible .hobby-name,
+.hobby-tile:hover .hobby-sub,
+.hobby-tile:focus-visible .hobby-sub { transform: translateY(-1.2cqw); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hobby-img, .hobby-eyebrow, .hobby-name, .hobby-sub { transition: none; }
+}
